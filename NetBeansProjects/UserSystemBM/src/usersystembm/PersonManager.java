@@ -47,8 +47,8 @@ public class PersonManager {
         return person.getEmail();
     }
     
-    public void addPerson(String name, String email) throws SQLException{
-        Object[] params = {null, name, email};
+    public void addPerson(Person person) throws SQLException{
+        Object[] params = {null, person.getName(), person.getEmail()};
         database.insert("users", params);
         refreshList();
         

@@ -73,28 +73,17 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     public void handleButtonNewUser(ActionEvent event) throws IOException {
-        Stage stage;
-        Parent root;
-
-        if (event.getSource() == menuItemNewUser) {
-            stage = new Stage();
-            root = FXMLLoader.load(getClass().getResource("FXMLNewUserDialog.fxml"));
-            stage.setScene(new Scene(root));
-            stage.setTitle("Pridani uzivatele");
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initOwner(label.getScene().getWindow());
-            stage.showAndWait();
-        } else if (event.getSource() == buttonAddUser) {
-
+        PersonDialog dialog = new PersonDialog(label.getScene().getWindow());
+        dialog.showAndWait();
+        Person person = dialog.getOsoba();
+        if(person != null){
             try {
-                personManager.addPerson(textFieldName.getText(), textFieldEmail.getText());
+                personManager.addPerson(person);
             } catch (SQLException ex) {
-                Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                System.err.println("Chyba vloceni uzivatele "+ex.getMessage());
             }
         }
-        stage = (Stage) buttonAddUser.getScene().getWindow();
-        stage.close();
-
+      
     }
 
     @Override
