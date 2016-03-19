@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ships xmlns="http://www.artin.cz/ships/gen" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.artin.cz/ships/gen ships.xsd">
+    <ship>
+        <name>Aaron Manby</name>
+        <class>cz.artin.ships.model.SteamShip</class>
+        <weight>20</weight>
+        <length>120</length>
+        <width>15</width>
+        <dateOfCreation>2011-10-26</dateOfCreation>
+    </ship>
+    <ship>
+        <name>Yamal</name>
+        <class>cz.artin.ships.model.IceBreaker</class>
+        <weight>30</weight>
+        <length>99</length>
+        <width>12</width>
+        <dateOfCreation>2011-10-13</dateOfCreation>
+    </ship>
+    <ship>
+        <name>Titanic</name>
+        <class>cz.artin.ships.model.SteamShip</class>
+        <weight>30</weight>
+        <length>140</length>
+        <width>25</width>
+        <dateOfCreation>2012-10-26</dateOfCreation>
+    </ship>
+    <ship>
+        <name>Titanic</name>
+        <class>cz.artin.ships.model.Cruiser</class>
+        <weight>30</weight>
+        <length>140</length>
+        <width>25</width>
+        <dateOfCreation>2012-10-26</dateOfCreation>
+    </ship>
+</ships>
