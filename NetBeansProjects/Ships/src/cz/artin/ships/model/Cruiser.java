@@ -5,6 +5,8 @@
  */
 package cz.artin.ships.model;
 
+import java.util.Date;
+
 /**
  *
  * @author honzik
@@ -13,8 +15,8 @@ public class Cruiser extends ShipParent{
     
   
     
-    public Cruiser(String name, int deckArea, int weight, int dateOfCreation) {        
-        super(name, deckArea, weight, dateOfCreation, true, true);
+    public Cruiser(String name, int weight, int length, int width, Date dateOfCreation) {        
+        super(name, weight, length, width, dateOfCreation, true, true);
     }
 
     

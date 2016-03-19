@@ -10,7 +10,10 @@ import cz.artin.ships.gen.Ships;
 import cz.artin.ships.model.Ship;
 import cz.artin.ships.model.ShipParent;
 import java.lang.reflect.InvocationTargetException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,14 +33,16 @@ public class ShipServiceImpl implements ShipService{
         List<Ships.Ship> listShipsIn = ships.getShip();
         List<Ship> listShipsOut = new ArrayList<>();
         //for(Ships.Ship ship : listShipsIn){
+        
         listShipsIn.stream().forEach((ship) -> {
             try {
                 Class trida = Class.forName(ship.getClazz());
-                Class intArgsClass[] = new Class[]{String.class, int.class, int.class, int.class};
+                Class intArgsClass[] = new Class[]{String.class, int.class, int.class, int.class, Date.class};
                 Object[] intArgs = new Object[]{ship.getName(),
-                    ship.getLength(),
                     ship.getWeight(),
-                    ship.getWidth()};
+                    ship.getLength(),
+                    ship.getWidth(),
+                    ship.getDateOfCreation().toGregorianCalendar().getTime()};
                 
                 ShipParent shipObject = (ShipParent) trida.getConstructor(intArgsClass).newInstance(intArgs);
                 listShipsOut.add(shipObject);

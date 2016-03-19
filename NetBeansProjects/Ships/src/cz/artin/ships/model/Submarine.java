@@ -5,14 +5,16 @@
  */
 package cz.artin.ships.model;
 
+import java.util.Date;
+
 /**
  *
  * @author honzik
  */
 public class Submarine extends ShipParent{
     
-    public Submarine(String name, int deckArea, int weight, int dateOfCreation) {
-        super(name, deckArea, weight, dateOfCreation, true, false);
+    public Submarine(String name, int weight, int length, int width, Date dateOfCreation) {        
+        super(name, weight, length, width, dateOfCreation, true, false);
     }
     
 }

@@ -5,6 +5,8 @@
  */
 package cz.artin.ships.model;
 
+import java.util.Date;
+
 /**
  * Define properties of all ships 
  * @author Jan Simicek
@@ -16,7 +18,7 @@ public interface Ship {
 
     int getWeight();
     
-    int getDateOfCreation();
+    Date getDateOfCreation();
     
     boolean isWarShip();
     

@@ -5,14 +5,16 @@
  */
 package cz.artin.ships.model;
 
+import java.util.Date;
+
 /**
  *
  * @author honzik
  */
 public class SteamShip extends ShipParent {
     
-    public SteamShip(String name, int deckArea, int weight, int dateOfCreation) {
-        super(name, deckArea, weight, dateOfCreation, false, true);
+    public SteamShip(String name, int weight, int length, int width, Date dateOfCreation) {        
+        super(name, weight, length, width, dateOfCreation, false, true);
     }
     
 }
